@@ -1,0 +1,925 @@
+/* =====================================================
+   MIGRATION STATUS
+   Same CPSE Portal Theme
+   ===================================================== */
+
+.migration-page {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  padding: 25px 30px 40px;
+
+  color: #172033;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.migration-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-bottom: 26px;
+}
+
+.migration-eyebrow {
+  margin-bottom: 7px;
+
+  color: #2563eb;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+}
+
+.migration-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.migration-header p {
+  margin: 7px 0 0;
+
+  color: #667085;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =====================================================
+   REFRESH
+   ===================================================== */
+
+.migration-refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 9px 13px;
+
+  border: 1px solid #d9dee7;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #475467;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+
+  white-space: nowrap;
+}
+
+.migration-refresh-btn:hover {
+  border-color: #2563eb;
+  background: #f8fbff;
+  color: #2563eb;
+
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.08);
+
+  transform: translateY(-1px);
+}
+
+.migration-refresh-btn:active {
+  transform: scale(0.97);
+}
+
+.migration-refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =====================================================
+   ALERT
+   ===================================================== */
+
+.migration-alert {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 11px 14px;
+  margin-bottom: 20px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+}
+
+.migration-error {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* =====================================================
+   SUMMARY CARDS
+   ===================================================== */
+
+.migration-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+.migration-stat-card {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #e6e9ef;
+  border-radius: 10px;
+
+  box-shadow: 0 2px 7px rgba(16, 24, 40, 0.03);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.migration-stat-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.07);
+}
+
+.migration-stat-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+}
+
+.migration-stat-icon.green {
+  background: #ecfdf3;
+  color: #16a34a;
+}
+
+.migration-stat-icon.yellow {
+  background: #fff8e7;
+  color: #d99000;
+}
+
+.migration-stat-icon.blue {
+  background: #eef4ff;
+  color: #2563eb;
+}
+
+.migration-stat-card span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #667085;
+
+  font-size: 11px;
+}
+
+.migration-stat-card strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #172033;
+
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.migration-stat-card small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+/* =====================================================
+   MAIN SECTION
+   ===================================================== */
+
+.migration-section {
+  width: 100%;
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e6e9ef;
+  border-radius: 10px;
+
+  box-shadow: 0 2px 7px rgba(16, 24, 40, 0.03);
+}
+
+.migration-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid #eef0f4;
+}
+
+.migration-section-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.migration-section-header h2 svg {
+  color: #2563eb;
+}
+
+.migration-section-header p {
+  margin: 5px 0 0;
+
+  color: #8a93a5;
+
+  font-size: 10px;
+}
+
+.migration-ready-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 9px;
+
+  border-radius: 20px;
+
+  background: #ecfdf3;
+  color: #15803d;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+
+.migration-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.migration-table {
+  width: 100%;
+  min-width: 900px;
+
+  border-collapse: collapse;
+}
+
+.migration-table th {
+  padding: 11px 16px;
+
+  background: #fafbfc;
+
+  border-bottom: 1px solid #eef0f4;
+
+  color: #8a93a5;
+
+  text-align: left;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+.migration-table td {
+  padding: 13px 16px;
+
+  border-bottom: 1px solid #f0f2f5;
+
+  color: #475467;
+
+  font-size: 11px;
+
+  vertical-align: middle;
+}
+
+.migration-table tbody tr {
+  transition: background 0.18s ease;
+}
+
+.migration-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.migration-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =====================================================
+   CPSE
+   ===================================================== */
+
+.migration-cpse {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #172033;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.migration-cpse-icon {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #eef4ff;
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.migration-code {
+  display: inline-block;
+
+  padding: 5px 7px;
+
+  border-radius: 5px;
+
+  background: #f3f4f6;
+  color: #475467;
+
+  font-family: monospace;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+.migration-description {
+  max-width: 250px;
+
+  color: #475467;
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.migration-national-code {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.migration-national-code svg {
+  color: #98a2b3;
+}
+
+/* =====================================================
+   CONFIDENCE
+   ===================================================== */
+
+.migration-confidence {
+  display: inline-flex;
+
+  padding: 5px 7px;
+
+  border-radius: 5px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.confidence-high {
+  background: #ecfdf3;
+  color: #15803d;
+}
+
+.confidence-medium {
+  background: #fff8e7;
+  color: #b77900;
+}
+
+.confidence-low {
+  background: #fff1f2;
+  color: #dc2626;
+}
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.migration-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 5px 8px;
+
+  border-radius: 20px;
+
+  background: #ecfdf3;
+  color: #15803d;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   EMPTY / LOADING
+   ===================================================== */
+
+.migration-empty {
+  min-height: 220px;
+
+  padding: 40px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.migration-empty-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 13px;
+
+  border-radius: 12px;
+
+  background: #eef4ff;
+  color: #2563eb;
+}
+
+.migration-empty h3 {
+  margin: 0;
+
+  color: #475467;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.migration-empty p {
+  max-width: 430px;
+
+  margin: 7px 0 0;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   INFO CARD
+   ===================================================== */
+
+.migration-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  margin-top: 16px;
+
+  padding: 14px 16px;
+
+  border: 1px solid #dbe7ff;
+  border-radius: 9px;
+
+  background: #f8faff;
+}
+
+.migration-info-icon {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #eaf1ff;
+  color: #2563eb;
+}
+
+.migration-info strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #344054;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.migration-info p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   LOADER
+   ===================================================== */
+
+.migration-spin {
+  animation: migrationSpin 1s linear infinite;
+}
+
+@keyframes migrationSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1000px) {
+  .migration-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .migration-stat-card {
+    padding: 16px;
+  }
+
+  .migration-table {
+    min-width: 850px;
+  }
+}
+
+/* =====================================================
+   SMALL TABLET
+   ===================================================== */
+
+@media (max-width: 800px) {
+  .migration-page {
+    padding: 22px 22px 35px;
+  }
+
+  .migration-header {
+    gap: 18px;
+  }
+
+  .migration-header h1 {
+    font-size: 20px;
+  }
+
+  .migration-summary-grid {
+    gap: 12px;
+  }
+
+  .migration-section-header {
+    padding: 15px 16px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 650px) {
+  .migration-page {
+    padding: 20px 15px 30px;
+  }
+
+  .migration-header {
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 20px;
+  }
+
+  .migration-header h1 {
+    font-size: 20px;
+  }
+
+  .migration-header p {
+    font-size: 10px;
+  }
+
+  .migration-refresh-btn {
+    width: 100%;
+  }
+
+  .migration-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .migration-stat-card {
+    padding: 14px;
+  }
+
+  .migration-stat-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .migration-section {
+    border-radius: 9px;
+  }
+
+  .migration-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 15px;
+  }
+
+  .migration-ready-badge {
+    align-self: flex-start;
+  }
+
+  .migration-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .migration-table {
+    min-width: 820px;
+  }
+
+  .migration-info {
+    padding: 13px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+  .migration-page {
+    padding: 18px 12px 28px;
+  }
+
+  .migration-header h1 {
+    font-size: 19px;
+  }
+
+  .migration-eyebrow {
+    font-size: 8px;
+  }
+
+  .migration-header p {
+    font-size: 10px;
+  }
+
+  .migration-refresh-btn {
+    width: 100%;
+  }
+
+  .migration-stat-card {
+    gap: 11px;
+    padding: 13px;
+  }
+
+  .migration-stat-card strong {
+    font-size: 21px;
+  }
+
+  .migration-stat-card span {
+    font-size: 10px;
+  }
+
+  .migration-stat-card small {
+    font-size: 9px;
+  }
+
+  .migration-section-header h2 {
+    font-size: 13px;
+  }
+
+  .migration-section-header p {
+    font-size: 9px;
+  }
+
+  .migration-info {
+    gap: 9px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL DEVICES
+   ===================================================== */
+
+@media (max-width: 360px) {
+  .migration-page {
+    padding: 16px 10px 25px;
+  }
+
+  .migration-header h1 {
+    font-size: 18px;
+  }
+
+  .migration-stat-card {
+    padding: 11px;
+  }
+
+  .migration-stat-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .migration-stat-card strong {
+    font-size: 20px;
+  }
+
+  .migration-table {
+    min-width: 800px;
+  }
+}
+/* =========================================
+   MIGRATION STATUS - APPROVED STYLE
+   ========================================= */
+
+.migration-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 7px 13px;
+
+  border-radius: 8px;
+
+  background: #ecfdf5;
+  color: #15803d;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.migration-status-badge svg {
+  color: #16a34a;
+  stroke-width: 2.5;
+}
+
+
+/* READY COUNT BADGE */
+
+.migration-ready-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: #ecfdf5;
+  color: #15803d;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.migration-ready-badge svg {
+  color: #16a34a;
+}
+
+
+/* CONFIDENCE */
+
+.migration-confidence.confidence-high {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 90px;
+  padding: 9px 14px;
+
+  border-radius: 7px;
+
+  background: #ecfdf5;
+  color: #15803d;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+.migration-page .migration-status-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+
+  padding: 7px 13px !important;
+  min-width: auto !important;
+  width: auto !important;
+  height: auto !important;
+
+  border-radius: 8px !important;
+
+  background: #ecfdf5 !important;
+  color: #15803d !important;
+
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+
+  white-space: nowrap !important;
+  border: none !important;
+}
+
+.migration-page .migration-status-badge svg {
+  color: #16a34a !important;
+  width: 14px !important;
+  height: 14px !important;
+}

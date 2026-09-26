@@ -8,6 +8,7 @@ import {
   BrainCircuit,
   CheckCircle2,
   AlertTriangle,
+  RefreshCw,
 } from "lucide-react";
 
 import { getDuplicateGroups } from "../services/api";
@@ -23,6 +24,8 @@ function Duplicates() {
 
   const [groups, setGroups] = useState([]);
 
+  const [totalMaterials, setTotalMaterials] = useState(0);
+
   const [search, setSearch] = useState("");
 
   const [selectedGroup, setSelectedGroup] =
@@ -33,6 +36,9 @@ function Duplicates() {
 
   const [error, setError] =
     useState("");
+
+  const [lastUpdated, setLastUpdated] =
+    useState(null);
 
 
   // =========================================================
@@ -56,10 +62,43 @@ function Duplicates() {
       const response =
         await getDuplicateGroups();
 
-      setGroups(
-        Array.isArray(response.data)
-          ? response.data
-          : []
+      console.log(
+        "Duplicate API Response:",
+        response.data
+      );
+
+
+      /*
+       * Backend response:
+       *
+       * {
+       *   totalMaterials: 50,
+       *   duplicateGroups: [...]
+       * }
+       *
+       * So we must read duplicateGroups
+       * instead of treating response.data
+       * directly as an array.
+       */
+
+      const data = response.data || {};
+
+      const duplicateGroups =
+        Array.isArray(data.duplicateGroups)
+          ? data.duplicateGroups
+          : Array.isArray(data)
+            ? data
+            : [];
+
+
+      setGroups(duplicateGroups);
+
+      setTotalMaterials(
+        Number(data.totalMaterials || 0)
+      );
+
+      setLastUpdated(
+        new Date()
       );
 
     } catch (err) {
@@ -68,6 +107,8 @@ function Duplicates() {
         "Duplicate API Error:",
         err
       );
+
+      setGroups([]);
 
       setError(
         "Unable to load duplicate groups."
@@ -162,7 +203,7 @@ function Duplicates() {
         <div className="duplicate-total">
 
           <strong>
-            {groups.length}
+            {loading ? "..." : groups.length}
           </strong>
 
           <span>
@@ -178,20 +219,24 @@ function Duplicates() {
           SEARCH
           ===================================================== */}
 
-      <div className="duplicate-search">
+      {!loading && !error && (
 
-        <Search size={17} />
+        <div className="duplicate-search">
 
-        <input
-          type="text"
-          placeholder="Search material codes, descriptions or CPSE..."
-          value={search}
-          onChange={(e) =>
-            setSearch(e.target.value)
-          }
-        />
+          <Search size={17} />
 
-      </div>
+          <input
+            type="text"
+            placeholder="Search material codes, descriptions or CPSE..."
+            value={search}
+            onChange={(e) =>
+              setSearch(e.target.value)
+            }
+          />
+
+        </div>
+
+      )}
 
 
       {/* =====================================================
@@ -205,12 +250,17 @@ function Duplicates() {
           <BrainCircuit size={32} />
 
           <h3>
-            Loading duplicate groups
+            AI duplicate detection is running
           </h3>
 
           <p>
-            AI duplicate detection results
-            are being loaded...
+            Comparing material descriptions,
+            attributes and semantic similarity.
+          </p>
+
+          <p>
+            This may take a little longer
+            during the first request.
           </p>
 
         </div>
@@ -241,7 +291,11 @@ function Duplicates() {
             className="retry-button"
             onClick={loadDuplicates}
           >
+
+            <RefreshCw size={16} />
+
             Retry
+
           </button>
 
         </div>
@@ -262,12 +316,15 @@ function Duplicates() {
             <CheckCircle2 size={32} />
 
             <h3>
-              No duplicate groups found
+              {search
+                ? "No matching groups found"
+                : "No duplicate groups found"}
             </h3>
 
             <p>
-              No AI-detected duplicate groups
-              match your search.
+              {search
+                ? "Try a different material code, description or CPSE."
+                : "No AI-detected duplicate groups are currently available."}
             </p>
 
           </div>
@@ -532,8 +589,7 @@ function Duplicates() {
                 <strong>
 
                   {Number(
-                    selectedGroup.highestSimilarity ||
-                      0
+                    selectedGroup.highestSimilarity || 0
                   ).toFixed(2)}%
 
                 </strong>
